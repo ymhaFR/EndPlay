@@ -18,9 +18,42 @@
       box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     }
 
+    .in-out-btn {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .in-out-btn button {
+      padding: 12px 20px;
+      border: 1px solid #1f2937;
+      border-radius: 0px;
+      background-color: #6b7280; /* Gray inactive */
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      align-items: center;
+    }
+
+    .in-out-btn button.active {
+      background-color: #1f2937; /* Active button */
+      align-items: center;
+    }
+
     h1 {
       text-align: center;
       margin-bottom: 20px;
+    }
+
+    #input-section {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #int-input-group {
+      margin-right: 20px;
     }
 
     .input-group {
@@ -34,11 +67,28 @@
     }
 
     input {
-      width: 100%;
+      width: 220px;
+      max-width: 100%;
       padding: 10px;
       font-size: 16px;
       border-radius: 5px;
       border: 1px solid #ccc;
+    }
+
+    .H2-input-group {
+      margin-bottom: 15px;
+    }
+
+    .H2-input-group input {
+      width:95.5%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .hidden {
+      display: none;
     }
 
     button {
@@ -53,6 +103,25 @@
     }
 
     button:hover {
+      background: #111827;
+    }
+
+    #reset-section {
+      margin-top: 15px;
+    }
+
+    #reset-button {
+      width: 120px;
+      max-width: 100%;
+      padding: 12px;
+      background: #6b7280;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    #reset-button:hover {
       background: #111827;
     }
 

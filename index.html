@@ -10,42 +10,100 @@
 
     <div class="container">
         <div class="in-out-btn">
-            <button>Intermediate</button>
-            <button>Output</button>
+            <button id="int-btn" class="active">Intermediate</button>
+            <button id="out-btn">Output</button>
         </div>  
         
         <h1>Gearbox Endplay Calculator</h1>
 
-          
+          <section id="input-section">
+            <div id="int-input-group">
+               
+                <div class="input-group">
+                    <label for="value1">Measurement for Load 1</label>
+                    <input type="number" id="value1" step="0.01">
+                </div>
 
-          <div class="input-group">
-              <label for="value1">Measurement for Load 1</label>
-              <input type="number" id="value1" step="0.01">
-          </div>
+                <div class="input-group">
+                    <label for="value2">Measurement for Load 2</label>
+                    <input type="number" id="value2" step="0.01">
+                </div>
 
-          <div class="input-group">
-              <label for="value2">Measurement for Load 2</label>
-              <input type="number" id="value2" step="0.01">
-          </div>
+                <div class="input-group">
+                    <label for="value1">Measurement for Load 3</label>
+                    <input type="number" id="value5" step="0.01">
+                </div>
 
-          <div class="input-group">
-              <label for="value2">Measurement for NoLoad 1</label>
-              <input type="number" id="value3" step="0.01">
-          </div>
+                <div class="input-group">
+                    <label for="value2">Measurement for Load 4</label>
+                    <input type="number" id="value6" step="0.01">
+                </div>
 
-          <div class="input-group">
-              <label for="value2">Measurement for NoLoad 2</label>
-              <input type="number" id="value4" step="0.01">
+            </div>
+
+            <div id="out-input-group">
+                <div class="input-group">
+                    <label for="value3">Measurement for NoLoad 1</label>
+                    <input type="number" id="value3" step="0.01">
+                </div>
+
+                <div class="input-group">
+                    <label for="value4">Measurement for NoLoad 2</label>
+                    <input type="number" id="value4" step="0.01">
+                </div>
+
+                <div class="input-group">
+                    <label for="value7">Measurement for NoLoad 3</label>
+                    <input type="number" id="value7" step="0.01">
+                </div>
+
+                <div class="input-group">
+                    <label for="value8">Measurement for NoLoad 4</label>
+                    <input type="number" id="value8" step="0.01">
+                </div>
+            </div>
+            
+          </section>
+
+          <div class="H2-input-group hidden">
+            <label for="H2">H2 Value</label>
+            <input type="number" id="H2" step="0.01">
           </div>
 
           <button onclick="calculateInt()">Calculate</button>
 
           <div class="result" id="result">
-          Result will appear here
+            Result will appear here
           </div>
+
+          <div id="reset-section">
+            <button id="reset-button">Reset</button>
+        </div>
 
           <div class="status" id="status"></div>
     </div>
+    <script src="app.js"></script>
 
+    <script>
+        const buttons = document.querySelectorAll(".in-out-btn button");
+        const out_button = document.getElementById("out-btn");
+        const int_button = document.getElementById("int-btn");
+        const h2_input = document.querySelector(".H2-input-group");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+
+                buttons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                // toggle H2 input
+                if (button === out_button) {
+                    h2_input.classList.remove("hidden");
+                } else {
+                    h2_input.classList.add("hidden");
+                }
+            });
+        });
+    </script>
   </body>
 </html>
